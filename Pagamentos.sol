@@ -33,7 +33,7 @@ contract Payments {
         }
 
         if (approvalsNum == minApprovers) {
-            beneficiary.send(address(this).balance);
+            beneficiary.transfer(address(this).balance);
             selfdestruct(owner);
         }
     }
